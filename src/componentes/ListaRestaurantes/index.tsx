@@ -67,7 +67,24 @@ const ListaRestaurantes = () => {
 
   }
 
+  const imprimirArray = () => {
+    console.clear();
+    for(var i = 0; i < restaurantes.length - 1; i++){
+      //restaurantes[i].pratos[0].nome = "teste";
+      
 
+      let meuPrato = {
+      id: 3,
+      descricao: 'Empadão de Frango',
+      imagem: 'https://t1.uc.ltmcdn.com/pt/images/5/7/1/img_como_fazer_empadao_de_frango_27175_600.jpg',
+      nome: 'Empadão de Frango',
+      restaurante: 1,
+      tag: 'Portuguesa'
+    }
+    restaurantes[i].pratos[0] = meuPrato;
+    console.log(restaurantes[i]);
+    }
+  }
   return (
     <section className={style.ListaRestaurantes}>
       <div>
@@ -76,6 +93,11 @@ const ListaRestaurantes = () => {
       <button onClick={() => setCount(count + 1)}>+</button>
       <button onClick={() => setCount(count - 1)}>-</button>
       <button onClick={buscarPratos}>Buscar Pratos</button>
+
+
+      <button onClick={imprimirArray}>Imprimir Array</button>
+
+
       </div>
       <h1>
         Os restaurantes mais <em>bacanas</em>!
